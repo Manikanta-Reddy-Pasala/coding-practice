@@ -1,3 +1,5 @@
+package strings;
+
 import sun.util.calendar.AbstractCalendar;
 
 public class StringIsRotationOfAnotherString {

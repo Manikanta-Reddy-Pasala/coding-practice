@@ -1,3 +1,5 @@
+package strings;
+
 public class ReverseString {
 
     public static String reverse_loop(String word) {
