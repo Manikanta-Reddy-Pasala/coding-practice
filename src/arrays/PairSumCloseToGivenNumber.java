@@ -2,14 +2,17 @@ package arrays;
 
 import java.util.Arrays;
 
-public class StockMaximumProfit {
+public class PairSumCloseToGivenNumber {
 
     /*
-   Math.abs()  --> removes negative signs and give a value
-    */
+    Math.abs()  --> removes negative signs and give a value
+    sort array
+    start from left pointer and right pointer
+    add  one left pointer with right pointer then based  on results decide
+     */
     public static void main(String args[]) {
 
-        int[] input = {14, 12, 70, 15, 99, 65, 21, 90};
+        int[] input ={-40,-5,1,3,6,7,8,20};
 
         findPairWhoseSumIsCloseToZero(input);
     }
@@ -21,24 +24,23 @@ public class StockMaximumProfit {
 
         int l = 0;
         int r = input.length - 1;
-        int maxValue = Integer.MIN_VALUE;
 
         int left_pointer = l;
         int right_pointer = input.length - 1;
 
-        while (l < r) {
+        while( l < r) {
 
-            int sum = input[l] - input[r];
+            int sum = input[l] + input[r];
 
-            if (Math.abs(sum) > Math.abs(maxValue)) {
-                maxValue = sum;
+            if( Math.abs(sum) < 5) {
                 left_pointer = l;
                 right_pointer = r;
             }
 
-            if (sum < 0) {
-                l++;
-            } else {
+            if(sum < 5) {
+                l ++;
+            }
+            else {
                 r--;
             }
         }
